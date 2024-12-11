@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Vôlei{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gestão de Vôlei</h1>
+        <nav>
+            <a href="{% url 'time_list' %}">Times</a>
+            <a href="{% url 'jogador_list' %}">Jogadores</a>
+        </nav>
+    </header>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer>
+        <p>© 2024 Sistema de Vôlei by Rogério</p>
+    </footer>
+</body>
+</html>

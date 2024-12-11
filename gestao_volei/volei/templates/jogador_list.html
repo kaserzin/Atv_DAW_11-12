@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Jogadores</h1>
+<a href="create/">Adicionar Jogador</a>
+<ul>
+{% for jogador in jogadores %}
+    <li>{{ jogador.nome }} ({{ jogador.idade }} anos) - {{ jogador.time.nome }} <a href="update/{{ jogador.id }}/">Editar</a> <a href="delete/{{ jogador.id }}/">Deletar</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

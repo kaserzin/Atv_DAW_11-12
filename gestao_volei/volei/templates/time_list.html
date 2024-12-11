@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Lista de Times</h1>
+<a href="create/">Adicionar Time</a>
+<ul>
+{% for time in times %}
+    <li>{{ time.nome }} - {{ time.cidade }} <a href="update/{{ time.id }}/">Editar</a> <a href="delete/{{ time.id }}/">Deletar</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Deletar Jogador</h1>
+<p>Tem certeza que deseja deletar o jogador {{ jogador.nome }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>
+{% endblock %}
