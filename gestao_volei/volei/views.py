@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Time, Jogador
 from .forms import TimeForm, JogadorForm
 
-# Time Views
 def time_list(request):
     times = Time.objects.all()
     return render(request, 'time_list.html', {'times': times})
@@ -29,7 +28,6 @@ def time_delete(request, id):
         return redirect('time_list')
     return render(request, 'time_confirm_delete.html', {'time': time})
 
-# Jogador Views
 def jogador_list(request):
     jogadores = Jogador.objects.all()
     return render(request, 'jogador_list.html', {'jogadores': jogadores})
